@@ -1,0 +1,21 @@
+{
+  "name": "@writetome51/array-get-duplicates-and-unique-items",
+  "version": "1.0.0",
+  "description": "array-handling functions that return data from the array but do not modify the array",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "array",
+    "manipulation"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "basic-data-handling": "latest",
+    "@writetome51/array-get-indexes-intermediate": "latest",
+    "@writetome51/array-analysis-basic": "latest"
+  }
+}

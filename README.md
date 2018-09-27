@@ -1,0 +1,1 @@
+These are array-handling functions that return data from the array but do not modify the array.
