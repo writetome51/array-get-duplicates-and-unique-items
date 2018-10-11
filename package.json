@@ -1,7 +1,7 @@
 {
-  "name": "@writetome51/array-get-duplicates-and-unique-items",
+  "name": "@writetome51/array-get-unique-items",
   "version": "1.0.0",
-  "description": "array-handling functions that return data from the array but do not modify the array",
+  "description": "Returns every item in array without any duplicates",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,6 @@
   "devDependencies": {},
   "dependencies": {
     "basic-data-handling": "latest",
-    "@writetome51/array-get-indexes-intermediate": "latest",
     "@writetome51/array-analysis-basic": "latest"
   }
 }

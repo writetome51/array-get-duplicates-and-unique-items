@@ -1,6 +1,6 @@
 import { isArray, notArray } from 'basic-data-handling/isArray_notArray';
-import { arrayContainsPrimitive } from '@writetome51/array-analysis-basic/arrayContainsPrimitive';
-import { arrayContainsArray } from '@writetome51/array-analysis-basic/arrayContainsArray';
+import { arrayHasPrimitive } from '@writetome51/array-has/arrayHasPrimitive';
+import { arrayHasArray } from '@writetome51/array-has/arrayHasArray';
 
 
 // Won't work for array containing objects.  Objects will be ignored.
@@ -8,8 +8,8 @@ import { arrayContainsArray } from '@writetome51/array-analysis-basic/arrayConta
 export function getUniqueItems(array): any[] {
 	let uniqueItems = [];
 	array.forEach((item) => {
-		if ((isArray(item) && !arrayContainsArray(item, uniqueItems)) ||
-			(notArray(item) && !arrayContainsPrimitive(item, uniqueItems))) {
+		if ((isArray(item) && !arrayHasArray(item, uniqueItems)) ||
+			(notArray(item) && !arrayHasPrimitive(item, uniqueItems))) {
 			
 			uniqueItems.push(item);
 		}
