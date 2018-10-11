@@ -1,16 +1,16 @@
-import { isArray, notArray } from 'basic-data-handling/isArray_notArray';
-import { arrayHasPrimitive } from '@writetome51/array-has/arrayHasPrimitive';
-import { arrayHasArray } from '@writetome51/array-has/arrayHasArray';
+import { errorIfNotArray } from 'basic-data-handling/errorIfNotArray';
+import { arrayHas } from '@writetome51/array-has/arrayHas';
+import { not } from '@writetome51/not';
 
 
-// Won't work for array containing objects.  Objects will be ignored.
+// Will trigger error if array contains object.
 
 export function getUniqueItems(array): any[] {
+	errorIfNotArray(array);
 	let uniqueItems = [];
+
 	array.forEach((item) => {
-		if ((isArray(item) && !arrayHasArray(item, uniqueItems)) ||
-			(notArray(item) && !arrayHasPrimitive(item, uniqueItems))) {
-			
+		if (not(arrayHas(item, uniqueItems))) {
 			uniqueItems.push(item);
 		}
 	});

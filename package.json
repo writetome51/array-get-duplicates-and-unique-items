@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-unique-items",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns every item in array without any duplicates",
   "main": "",
   "scripts": {
@@ -8,6 +8,10 @@
   },
   "keywords": [
     "array",
+    "get",
+    "unique",
+    "items",
+    "duplicates",
     "manipulation"
   ],
   "author": "Steve Thompson",
@@ -15,6 +19,8 @@
   "devDependencies": {},
   "dependencies": {
     "basic-data-handling": "latest",
-    "@writetome51/array-analysis-basic": "latest"
+    "@writetome51/not": "latest",
+    "@writetome51/array-has": "latest",
+    "@writetome51/arrays-match": "latest"
   }
 }
