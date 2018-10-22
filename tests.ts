@@ -1,5 +1,5 @@
 import { getUniqueItems } from './getUniqueItems';
-import { arraysMatch } from '@writetome51/arrays-match/arraysMatch';
+import { arraysMatch } from '@writetome51/arrays-match';
 
 
 let arr = ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]];
