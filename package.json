@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-unique-items",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns every item in array without any duplicates",
   "main": "",
   "scripts": {
