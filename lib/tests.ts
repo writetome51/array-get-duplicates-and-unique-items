@@ -2,7 +2,7 @@ import { getUniqueItems } from './getUniqueItems';
 import { arraysMatch } from '@writetome51/arrays-match';
 
 
-let arr = ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]];
+let arr: any[] = ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]];
 
 // Test 1
 let uniqueItems = getUniqueItems(arr);
@@ -22,7 +22,7 @@ else console.log('test 3 failed');
 
 
 // Test 4
-arr = [1, 2, 3, 4, 5];
+arr = [1, 2, 3, 4, 5, true, false, [1], 'hello'];
 uniqueItems = getUniqueItems(arr);
 if (arraysMatch(uniqueItems, arr)) console.log('test 4 passed');
 else console.log('test 4 failed');

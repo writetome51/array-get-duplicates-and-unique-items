@@ -1,8 +1,8 @@
 {
   "name": "@writetome51/array-get-unique-items",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Returns every item in array without any duplicates",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +15,7 @@
     "get",
     "unique",
     "items",
-    "duplicates",
+    "no-duplicates",
     "manipulation"
   ],
   "author": "Steve Thompson",

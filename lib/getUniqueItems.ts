@@ -10,9 +10,7 @@ export function getUniqueItems(array): any[] {
 	let uniqueItems = [];
 
 	array.forEach((item) => {
-		if (not(arrayHas(item, uniqueItems))) {
-			uniqueItems.push(item);
-		}
+		if (not(arrayHas(item, uniqueItems)))  uniqueItems.push(item);
 	});
 	return uniqueItems;
 }
