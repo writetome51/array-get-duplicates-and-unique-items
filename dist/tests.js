@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var getUniqueItems_1 = require("./getUniqueItems");
+var index_1 = require("./index");
 var arrays_match_1 = require("@writetome51/arrays-match");
 var arr = ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]];
 // Test 1
-var uniqueItems = getUniqueItems_1.getUniqueItems(arr);
+var uniqueItems = index_1.getUniqueItems(arr);
 if (arrays_match_1.arraysMatch(uniqueItems, ['', 1, 2, 3, [1]]))
     console.log('test 1 passed');
 else
@@ -15,14 +15,14 @@ if (arrays_match_1.arraysMatch(arr, ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]]))
 else
     console.log('test 2 failed');
 // Test 3
-var result = getUniqueItems_1.getUniqueItems([]);
+var result = index_1.getUniqueItems([]);
 if (result.length === 0)
     console.log('test 3 passed');
 else
     console.log('test 3 failed');
 // Test 4
 arr = [1, 2, 3, 4, 5, true, false, [1], 'hello'];
-uniqueItems = getUniqueItems_1.getUniqueItems(arr);
+uniqueItems = index_1.getUniqueItems(arr);
 if (arrays_match_1.arraysMatch(uniqueItems, arr))
     console.log('test 4 passed');
 else
@@ -31,7 +31,7 @@ else
 arr = [1, 2, 3, 4, {}];
 var errorTriggered = false;
 try {
-    uniqueItems = getUniqueItems_1.getUniqueItems(arr);
+    uniqueItems = index_1.getUniqueItems(arr);
 }
 catch (e) {
     errorTriggered = true;

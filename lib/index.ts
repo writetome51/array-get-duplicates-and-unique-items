@@ -3,7 +3,7 @@ import { arrayHas } from '@writetome51/array-has';
 import { not } from '@writetome51/not';
 
 
-// Will trigger error if array contains object.
+// Will trigger error if array contains object.  Arrays are OK.
 
 export function getUniqueItems(array): any[] {
 	errorIfNotArray(array);

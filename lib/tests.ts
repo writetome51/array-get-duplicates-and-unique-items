@@ -1,4 +1,4 @@
-import { getUniqueItems } from './getUniqueItems';
+import { getUniqueItems } from './index';
 import { arraysMatch } from '@writetome51/arrays-match';
 
 

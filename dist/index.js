@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var errorIfNotArray_1 = require("basic-data-handling/errorIfNotArray");
 var array_has_1 = require("@writetome51/array-has");
 var not_1 = require("@writetome51/not");
-// Will trigger error if array contains object.
+// Will trigger error if array contains object.  Arrays are OK.
 function getUniqueItems(array) {
     errorIfNotArray_1.errorIfNotArray(array);
     var uniqueItems = [];
