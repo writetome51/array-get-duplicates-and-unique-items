@@ -1,5 +1,5 @@
-import { errorIfNotArray } from 'basic-data-handling/errorIfNotArray';
 import { arrayHas } from '@writetome51/array-has';
+import { errorIfNotArray } from 'error-if-not-array';
 import { not } from '@writetome51/not';
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-unique-items",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Returns every item in array without any duplicates",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/writetome51/get-unique-items.git"
+    "url": "git+https://github.com/writetome51/array-get-unique-items.git"
   },
   "keywords": [
     "array",
@@ -22,15 +22,15 @@
   "author": "Steve Thompson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/writetome51/get-unique-items/issues"
+    "url": "https://github.com/writetome51/array-get-unique-items/issues"
   },
-  "homepage": "https://github.com/writetome51/get-unique-items#readme",
+  "homepage": "https://github.com/writetome51/array-get-unique-items#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "~1.0.5"
+    "@writetome51/arrays-match": "~1.0.6"
   },
   "dependencies": {
-    "basic-data-handling": "~1.0.15",
-    "@writetome51/not": "~1.0.4",
+    "error-if-not-array": "~1.0.0",
+    "@writetome51/not": "~1.0.5",
     "@writetome51/array-has": "~1.0.7"
   }
 }
