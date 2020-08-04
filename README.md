@@ -1,22 +1,73 @@
 # getUniqueItems(array): any[]
 
-Returns every item in `array` without any duplicates.  
-NOTICE:  Will trigger error if array contains object.  Arrays are OK.
+Returns every item in `array` without any duplicates. Does not modify `array`. 
 
-## Example
+Note:  duplicate arrays do not have to match using the `===` operator.  
+However, duplicate objects do.  See the examples.
+
+
+## Examples
+<details>
+<summary>view examples</summary>
+
 ```
-let arr = [ '', 1, 2, 3, '', [1], 1, 2, 3, '', [1] ];  
-let uniqueItems = getUniqueItems(arr);  
-// uniqueItems is now [ '', 1, 2, 3, [1] ]
+getUniqueItems( [ '', 1, 2, 3, '', 1, 2, 3, '' ] );  
+// --> [ '', 1, 2, 3 ]
+
+getUniqueItems( [ true, true, false, true, false, 'aa' ] );  
+// --> [ true, false, 'aa' ]
+
+
+// Objects appearing identical, but not identical in memory, are not 
+// considered duplicates:
+
+let obj1 = {name: 'steve'};
+let obj2 = {name: 'steve'};
+
+getUniqueItems([obj1, obj2]);
+// --> [ {name: 'steve'}, {name: 'steve'} ]
+
+// They must be identical in memory to be considered duplicates:
+
+let obj1 = {name: 'steve'};
+let obj2 = obj1;
+
+getUniqueItems([obj1, obj2]);
+// --> [ {name: 'steve'} ]
+
+
+// Arrays appearing identical, but not identical in memory, can still 
+// be considered duplicates. This is because the algorithm loops thru 
+// them, checking if array1[i] === array2[i].  If array1[i] and array2[i] 
+// are both arrays of identical length, the algorithm recursively operates 
+// on those arrays.
+
+getUniqueItems( [ [[1,2,3]], [[1,2,3]] ] );
+// --> [ [[1,2,3]] ]
+
+
+// But, if the arrays contain objects not identical in memory, they're not 
+// considered duplicates:
+
+let arr = [ [[{name: 'steve'}]], [[{name: 'steve'}]] ];
+
+getUniqueItems(arr);
+// --> [ [[{name: 'steve'}]], [[{name: 'steve'}]] ]
+
+// Let's try that again with objects identical in memory:
+
+let obj1 = {name: 'steve'};
+let obj2 = obj1;
+let arr = [ [[obj1]], [[obj2]] ];
+getUniqueItems(arr);
+// --> [ [[{name: 'steve'}]] ]
 ```
+</details>
 
 ## Installation
 `npm i  @writetome51/array-get-unique-items`
 
 ## Loading
-```
-// if using TypeScript:
+```js
 import {getUniqueItems} from '@writetome51/array-get-unique-items';
-// if using ES5 Javascript:
-var getUniqueItems = require('@writetome51/array-get-unique-items').getUniqueItems;
 ```

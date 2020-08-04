@@ -1,42 +1,51 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = require("./index");
-var arrays_match_1 = require("@writetome51/arrays-match");
-var arr = ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]];
+import {getUniqueItems} from './index.js';
+import {arraysMatch} from '@writetome51/arrays-match';
+
+
+let arr = ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]];
 // Test 1
-var uniqueItems = index_1.getUniqueItems(arr);
-if (arrays_match_1.arraysMatch(uniqueItems, ['', 1, 2, 3, [1]]))
-    console.log('test 1 passed');
-else
-    console.log('test 1 failed');
+let uniqueItems = getUniqueItems(arr);
+if (arraysMatch(uniqueItems, ['', 1, 2, 3, [1]])) console.log('test 1 passed');
+else console.log('test 1 FAILED');
+
+
 // Test 2: Make sure the array hasn't been modified:
-if (arrays_match_1.arraysMatch(arr, ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]]))
-    console.log('test 2 passed');
-else
-    console.log('test 2 failed');
+if (arraysMatch(arr, ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]])) console.log('test 2 passed');
+else console.log('test 2 FAILED');
+
+
 // Test 3
-var result = index_1.getUniqueItems([]);
-if (result.length === 0)
-    console.log('test 3 passed');
-else
-    console.log('test 3 failed');
+let result = getUniqueItems([]);
+if (result.length === 0) console.log('test 3 passed');
+else console.log('test 3 FAILED');
+
+
 // Test 4
 arr = [1, 2, 3, 4, 5, true, false, [1], 'hello'];
-uniqueItems = index_1.getUniqueItems(arr);
-if (arrays_match_1.arraysMatch(uniqueItems, arr))
-    console.log('test 4 passed');
-else
-    console.log('test 4 failed');
-// Test 5: should trigger error if array contains object:
-arr = [1, 2, 3, 4, {}];
-var errorTriggered = false;
-try {
-    uniqueItems = index_1.getUniqueItems(arr);
-}
-catch (e) {
-    errorTriggered = true;
-}
-if (errorTriggered)
-    console.log('test 5 passed');
-else
-    console.log('test 5 failed');
+uniqueItems = getUniqueItems(arr);
+if (arraysMatch(uniqueItems, arr)) console.log('test 4 passed');
+else console.log('test 4 FAILED');
+
+
+// Test 5: duplicate objects can be identified, as long as they're identical in memory:
+let obj = {name: 'steve'};
+arr = [obj, obj];
+uniqueItems = getUniqueItems(arr);
+if (arraysMatch(uniqueItems, [obj])) console.log('test 5 passed');
+else console.log('test 5 FAILED');
+
+
+// Test 5A: objects appearing identical, but not identical in memory, are not considered duplicates:
+let obj1 = {name: 'steve'};
+let obj2 = {name: 'steve'};
+uniqueItems = getUniqueItems([obj1, obj2]);
+if (arraysMatch(uniqueItems, [obj1, obj2])) console.log('test 5A passed');
+else console.log('test 5A FAILED');
+
+
+obj1 = {name: 'steve'};
+obj2 = obj1;
+let obj3 = obj2;
+uniqueItems = getUniqueItems([ [[obj1]], [[obj2]], [[obj3]] ]);
+if (arraysMatch(uniqueItems, [ [[obj1]] ] )) console.log('test 5B passed');
+else console.log('test 5B FAILED');
