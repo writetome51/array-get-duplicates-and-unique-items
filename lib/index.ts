@@ -3,10 +3,11 @@ import { not } from '@writetome51/not';
 
 
 export function getUniqueItems(array): any[] {
-	let uniqueItems = [];
+	let uniqueItems = [], i = -1, length = array.length;
 
-	array.forEach((item) => {
+	while (++i < length) {
+		let item = array[i];
 		if (not(arrayHas(item, uniqueItems))) uniqueItems.push(item);
-	});
+	}
 	return uniqueItems;
 }

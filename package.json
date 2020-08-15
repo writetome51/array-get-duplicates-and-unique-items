@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-unique-items",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Returns every item in array without any duplicates",
   "type": "module",
   "main": "dist/index.js",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/writetome51/array-get-unique-items#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "^2.0.0"
+    "@writetome51/arrays-match": "^2.0.1"
   },
   "dependencies": {
     "@writetome51/not": "^2.0.0",
