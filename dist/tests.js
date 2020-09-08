@@ -4,7 +4,9 @@ import {arraysMatch} from '@writetome51/arrays-match';
 
 let arr = ['', 1, 2, 3, '', [1], 1, 2, 3, '', [1]];
 // Test 1
+console.time('check');
 let uniqueItems = getUniqueItems(arr);
+console.timeEnd('check');
 if (arraysMatch(uniqueItems, ['', 1, 2, 3, [1]])) console.log('test 1 passed');
 else console.log('test 1 FAILED');
 

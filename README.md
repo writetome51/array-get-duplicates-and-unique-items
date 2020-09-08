@@ -27,7 +27,7 @@ let obj2 = {name: 'steve'};
 getUniqueItems([obj1, obj2]);
 // --> [ {name: 'steve'}, {name: 'steve'} ]
 
-// They must be identical in memory to be considered duplicates:
+// Try this:
 
 let obj1 = {name: 'steve'};
 let obj2 = obj1;

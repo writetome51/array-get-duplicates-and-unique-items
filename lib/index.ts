@@ -3,9 +3,8 @@ import { not } from '@writetome51/not';
 
 
 export function getUniqueItems(array): any[] {
-	let uniqueItems = [], i = -1, length = array.length;
 
-	while (++i < length) {
+	for (var uniqueItems = [], i = 0, length = array.length; i < length; ++i) {
 		let item = array[i];
 		if (not(arrayHas(item, uniqueItems))) uniqueItems.push(item);
 	}
